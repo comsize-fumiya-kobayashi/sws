@@ -8,6 +8,16 @@ SET AUTOCOMMIT=0;
 /* DB選択 */
 USE emp_sys_db;
 
+/* 部署マスタ作成 */
+CREATE TABLE emp_sys_db.m_section 
+(   
+	section_code       CHAR(4) DEFAULT 'S000' NOT NULL,
+	section_name       VARCHAR(32) NOT NULL UNIQUE,
+	update_time        TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+	PRIMARY KEY (section_code)
+);
+
+
 /* 従業員マスタ作成 */
 CREATE TABLE emp_sys_db.m_employee
 ( 
@@ -24,14 +34,6 @@ CREATE TABLE emp_sys_db.m_employee
 	FOREIGN KEY (section_code) REFERENCES emp_sys_db.m_section(section_code)
 );
 
-/* 部署マスタ作成 */
-CREATE TABLE emp_sys_db.m_section 
-(   
-	section_code       CHAR(4) DEFAULT 'S000' NOT NULL,
-	section_name       VARCHAR(32) NOT NULL UNIQUE,
-	update_time        TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-	PRIMARY KEY (section_code)
-);
 
 /* ユーザマスタ作成 */
 CREATE TABLE emp_sys_db.m_user
