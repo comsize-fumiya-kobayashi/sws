@@ -14,8 +14,6 @@
 	List<EmployeeListBean> employeeList = (List<EmployeeListBean>) request.getAttribute("employeeList");
 	
 	if (employeeList.size() != 0) {
-		
-	
 	
 	%>
 	<h3>従業員情報一覧</h3>
