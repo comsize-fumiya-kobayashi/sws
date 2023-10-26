@@ -1,14 +1,14 @@
-/* DBì¬ */
+/* DBä½œæˆ */
 DROP DATABASE IF EXISTS emp_sys_db;
 CREATE DATABASE emp_sys_db CHARACTER SET utf8 COLLATE utf8_general_ci;
 
-/* AUTOCOMMIT–³Œø */
+/* AUTOCOMMITç„¡åŠ¹ */
 SET AUTOCOMMIT=0;
 
-/* DB‘I‘ð */
+/* DBé¸æŠž */
 USE emp_sys_db;
 
-/* •”ƒ}ƒXƒ^ì¬ */
+/* éƒ¨ç½²ãƒžã‚¹ã‚¿ä½œæˆ */
 CREATE TABLE emp_sys_db.m_section 
 (   
 	section_code       CHAR(4) DEFAULT 'S000' NOT NULL,
@@ -18,7 +18,7 @@ CREATE TABLE emp_sys_db.m_section
 );
 
 
-/* ]‹Æˆõƒ}ƒXƒ^ì¬ */
+/* å¾“æ¥­å“¡ãƒžã‚¹ã‚¿ä½œæˆ */
 CREATE TABLE emp_sys_db.m_employee
 ( 
 	employee_code      CHAR(5) NOT NULL PRIMARY KEY,
@@ -35,7 +35,7 @@ CREATE TABLE emp_sys_db.m_employee
 );
 
 
-/* ƒ†[ƒUƒ}ƒXƒ^ì¬ */
+/* ãƒ¦ãƒ¼ã‚¶ãƒžã‚¹ã‚¿ä½œæˆ */
 CREATE TABLE emp_sys_db.m_user
 ( 
 	user_id            CHAR(24) NOT NULL,
@@ -44,22 +44,22 @@ CREATE TABLE emp_sys_db.m_user
 	PRIMARY KEY (user_id)
 );
 
-/* •”ƒ}ƒXƒ^INSERT */
-INSERT INTO emp_sys_db.m_section VALUES('S000','Š‘®•”–¢’è',NOW());
-INSERT INTO emp_sys_db.m_section VALUES('S110','‘–±•”',NOW());
-INSERT INTO emp_sys_db.m_section VALUES('S130','lŽ–•”',NOW());
-INSERT INTO emp_sys_db.m_section VALUES('S150','Œo—•”',NOW());
-INSERT INTO emp_sys_db.m_section VALUES('S210','Šé‰æ•”',NOW());
-INSERT INTO emp_sys_db.m_section VALUES('S230','‰c‹Æ•”',NOW());
+/* éƒ¨ç½²ãƒžã‚¹ã‚¿INSERT */
+INSERT INTO emp_sys_db.m_section VALUES('S000','æ‰€å±žéƒ¨ç½²æœªå®š',NOW());
+INSERT INTO emp_sys_db.m_section VALUES('S110','ç·å‹™éƒ¨',NOW());
+INSERT INTO emp_sys_db.m_section VALUES('S130','äººäº‹éƒ¨',NOW());
+INSERT INTO emp_sys_db.m_section VALUES('S150','çµŒç†éƒ¨',NOW());
+INSERT INTO emp_sys_db.m_section VALUES('S210','ä¼ç”»éƒ¨',NOW());
+INSERT INTO emp_sys_db.m_section VALUES('S230','å–¶æ¥­éƒ¨',NOW());
 
-/* ]‹Æˆõƒ}ƒXƒ^INSERT */
-INSERT INTO emp_sys_db.m_employee VALUES(1, 'ŽR“c', '‘¾˜Y', '‚â‚Ü‚¾', '‚½‚ë‚¤', 1, '1997-10-11', 'S110', '2010-02-10', NOW());
-INSERT INTO emp_sys_db.m_employee VALUES(2, '—é–Ø','‰ÔŽq','‚·‚¸‚«','‚Í‚È‚±',2,'1999-07-01','S130','2010-05-04', NOW());
-INSERT INTO emp_sys_db.m_employee VALUES(3,'²“¡','ˆê˜Y','‚³‚Æ‚¤','‚¢‚¿‚ë‚¤',1,'1989-08-31','S150','2010-08-31', NOW());
-INSERT INTO emp_sys_db.m_employee VALUES(4,'“c’†','ŽŸ˜Y','‚½‚È‚©','‚¶‚ë‚¤',1,'1991-02-10','S210','2012-10-11', NOW());
-INSERT INTO emp_sys_db.m_employee VALUES(5,'‚‹´','—DŽq','‚½‚©‚Í‚µ','‚ä‚¤‚±',2,'1998-05-04','S230','2010-03-02', NOW());
-INSERT INTO emp_sys_db.m_employee VALUES(6,'Ä“¡','“Žq','‚³‚¢‚Æ‚¤','‚à‚à‚±',2,'1994-03-02','S230','2010-07-01', NOW());
+/* å¾“æ¥­å“¡ãƒžã‚¹ã‚¿INSERT */
+INSERT INTO emp_sys_db.m_employee VALUES(1, 'å±±ç”°', 'å¤ªéƒŽ', 'ã‚„ã¾ã ', 'ãŸã‚ã†', 1, '1997-10-11', 'S110', '2010-02-10', NOW());
+INSERT INTO emp_sys_db.m_employee VALUES(2, 'éˆ´æœ¨','èŠ±å­','ã™ãšã','ã¯ãªã“',2,'1999-07-01','S130','2010-05-04', NOW());
+INSERT INTO emp_sys_db.m_employee VALUES(3,'ä½è—¤','ä¸€éƒŽ','ã•ã¨ã†','ã„ã¡ã‚ã†',1,'1989-08-31','S150','2010-08-31', NOW());
+INSERT INTO emp_sys_db.m_employee VALUES(4,'ç”°ä¸­','æ¬¡éƒŽ','ãŸãªã‹','ã˜ã‚ã†',1,'1991-02-10','S210','2012-10-11', NOW());
+INSERT INTO emp_sys_db.m_employee VALUES(5,'é«˜æ©‹','å„ªå­','ãŸã‹ã¯ã—','ã‚†ã†ã“',2,'1998-05-04','S230','2010-03-02', NOW());
+INSERT INTO emp_sys_db.m_employee VALUES(6,'æ–‰è—¤','æ¡ƒå­','ã•ã„ã¨ã†','ã‚‚ã‚‚ã“',2,'1994-03-02','S230','2010-07-01', NOW());
 
-/* •”ƒ}ƒXƒ^INSERT */
+/* éƒ¨ç½²ãƒžã‚¹ã‚¿INSERT */
 INSERT INTO emp_sys_db.m_user VALUES('admin','pass',NOW());
 INSERT INTO emp_sys_db.m_user VALUES('admin1','0000',NOW());
