@@ -13,7 +13,7 @@
 	List<EmployeeListBean> employeeList = (List<EmployeeListBean>) request.getAttribute("employeeList");
 
 	if (employeeList.size() != 0) {
-		%>
+	%>
 	<h3>従業員情報一覧</h3>
 
 	<table>
@@ -39,10 +39,10 @@
 		%>
 
 	</table>
-	<% }else{
-	
+	<%
+	} else {
 	%>
-	商品情報がありません。
+	従業員情報がありません。
 	<br>
 	<%
 	}
