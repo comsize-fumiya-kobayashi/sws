@@ -62,7 +62,6 @@ public class EmployeeListServlet extends HttpServlet {
 			
 		} catch (ClassNotFoundException | SQLException  e) {
 			e.printStackTrace();
-			
 		}
 		/* 最後にリクエストのjspへの転送を行います。*/
 		/* これにより、従業員情報一覧画面はEmployeelistServletのフォワードになります。*/
