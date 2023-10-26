@@ -60,7 +60,7 @@ public class EmployeeListServlet extends HttpServlet {
 			/*リクエストスコープをセットします。*/
 			request.setAttribute("employeeList", employeeList);
 			
-		} catch (ClassNotFoundException | SQLException |NullPointerException e) {
+		} catch (ClassNotFoundException | SQLException  e) {
 			e.printStackTrace();
 			
 		}
