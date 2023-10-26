@@ -52,3 +52,14 @@ INSERT INTO emp_sys_db.m_section VALUES('S150','経理部',NOW());
 INSERT INTO emp_sys_db.m_section VALUES('S210','企画部',NOW());
 INSERT INTO emp_sys_db.m_section VALUES('S230','営業部',NOW());
 
+/* 従業員マスタINSERT */
+INSERT INTO emp_sys_db.m_employee VALUES(1, '山田', '太郎', 'やまだ', 'たろう', 1, '1997-10-11', 'S110', '2010-02-10', NOW());
+INSERT INTO emp_sys_db.m_employee VALUES(2, '鈴木','花子','すずき','はなこ',2,'1999-07-01','S130','2010-05-04', NOW());
+INSERT INTO emp_sys_db.m_employee VALUES(3,'佐藤','一郎','さとう','いちろう',1,'1989-08-31','S150','2010-08-31', NOW());
+INSERT INTO emp_sys_db.m_employee VALUES(4,'田中','次郎','たなか','じろう',1,'1991-02-10','S210','2012-10-11', NOW());
+INSERT INTO emp_sys_db.m_employee VALUES(5,'高橋','優子','たかはし','ゆうこ',2,'1998-05-04','S230','2010-03-02', NOW());
+INSERT INTO emp_sys_db.m_employee VALUES(6,'斉藤','桃子','さいとう','ももこ',2,'1994-03-02','S230','2010-07-01', NOW());
+
+/* 部署マスタINSERT */
+INSERT INTO emp_sys_db.m_user VALUES('admin','pass',NOW());
+INSERT INTO emp_sys_db.m_user VALUES('admin1','0000',NOW());
