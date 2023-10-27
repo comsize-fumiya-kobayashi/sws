@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" import="model.dao.UserDAO"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,11 +17,11 @@
 		<table style="margin-left:auto; margin-right:auto;">
 			<tr>
 				<th>ユーザID</th>
-				<td><input type="text" name="user_id"></td>
+				<td><input type="text" name="user_id">
 			</tr>
 			<tr>
 				<th>パスワード</th>
-				<td><input type="password" name="password"></td>
+				<td><input type="password" name="password">
 			</tr>
 		</table>
 	<br>
@@ -30,26 +30,6 @@
 	<input type="reset" value="取消">
 	</div>
 	</form>
-	
-	 <%-- session.getAttribute(true);--%>
-	 
-    <%-- 認証失敗から呼び出されたのかどうか --%>
-    <% Object status = session.getAttribute("status"); %>
-
-    <%
-    	if (status != null){
-    %>
-      IDまたはパスワードに不備があります
-	<% 
-      		session.setAttribute("status", null);
-    	}
-    %>
-	
-	
-	<%
-	UserDAO dao = (UserDAO)request.getAttribute("url");
-	%>
-			IDまたはパスワードに不備があります
 	</div>
 	</div>
 </body>

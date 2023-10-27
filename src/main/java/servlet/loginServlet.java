@@ -9,7 +9,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import model.dao.UserDAO;
 
@@ -59,11 +58,7 @@ public class loginServlet extends HttpServlet {
 		if(LoginCheck) {
 			url = "menu.jsp";	
 		} else {
-//			HttpSession session = request.getSession();
-//			session.setAttribute("url", url);
-			url = "login.jsp";
-			HttpSession session = request.getSession();
-			session.setAttribute("url", url);
+			url = "login-failure.jsp";
 		}
 		
 		RequestDispatcher rd = request.getRequestDispatcher(url);

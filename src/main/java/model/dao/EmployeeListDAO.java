@@ -1,9 +1,9 @@
 package model.dao;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,14 +21,16 @@ public class EmployeeListDAO {
 
 		/* データベース接続を行い、同時にpreparedstatementの取得を行います。*/
 		try (Connection con = ConnectionManager.getConnection();
-				Statement stmt = con.createStatement();
-				ResultSet res = stmt.executeQuery(sql)){
+				PreparedStatement pstmt = con.prepareStatement(sql)) {
 
-//			/* SQLステートメントを実行します。*/
-//			ResultSet res = pstmt.executeQuery();
+			/* SQLステートメントを実行します。*/
+			ResultSet res = pstmt.executeQuery();
 
 			/* 従業員マスタ、m_employeeに登録されている情報が全て取り出されるまで、結果の操作を行います。*/
 			while(res.next()) {
+				
+				/* インスタンス化して、EmployeeListBeanを生成します。*/
+				EmployeeListBean bean = new EmployeeListBean ();
 				
 				String employeeCode = res.getString("employee_code");
 				String lastName = res.getString("last_name");
@@ -39,10 +41,8 @@ public class EmployeeListDAO {
 				int birthDay = res.getInt("birth_day");
 				String sectionCode = res.getString ("section_code");
 				int hireDate = res.getInt("hire_date");
-//				int updateDatetime = res.getInt("update_datetime");
+				int updateDatetime = res.getInt("update_datetime");
 				
-				/* インスタンス化して、EmployeeListBeanを生成します。*/
-				EmployeeListBean bean = new EmployeeListBean ();
 				bean.setEmployeeCode(employeeCode);
 				bean.setLastName(lastName);
 				bean.setFirstName(firstName);
@@ -52,13 +52,17 @@ public class EmployeeListDAO {
 				bean.setBirthDay(birthDay);
 				bean.setSectionCode(sectionCode);
 				bean.setHireDate(hireDate);
-//				bean.setUpdateDatetime(updateDatetime);
-				employeeList.add(bean);	
+				bean.setUpdateDatetime(updateDatetime);
+				
+				employeeList.add(bean);
+				
+				
 			}
 				/* employeeListを返します。*/
-//				return employeeList;
+				return employeeList;
+			
 		}
-		return employeeList;
+
 	}
 
 }
