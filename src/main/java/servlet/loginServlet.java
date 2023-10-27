@@ -58,7 +58,7 @@ public class loginServlet extends HttpServlet {
 		if(LoginCheck) {
 			url = "menu.jsp";	
 		} else {
-			url = "login-failure.jsp";
+			url = "login.jsp";
 		}
 		
 		RequestDispatcher rd = request.getRequestDispatcher(url);
