@@ -58,12 +58,12 @@ public class EmployeeListDAO {
 				
 				
 			}
-			/* employeeListを返します。*/
-			return employeeList;
+			
 
 			
 		}
-		
+		/* employeeListを返します。*/
+		return employeeList;
 		
 	}
 
