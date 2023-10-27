@@ -9,11 +9,13 @@
 </head>
 <body>
 
+	
 	<%
 	List<EmployeeListBean> employeeList = (List<EmployeeListBean>) request.getAttribute("employeeList");
-
+	
 	if (employeeList.size() != 0) {
-		%>
+	
+	%>
 	<h3>従業員情報一覧</h3>
 
 	<table>
@@ -41,12 +43,20 @@
 	</table>
 	<% }else{
 	
-	%>
-	商品情報がありません。
+	%>従業員情報がありません。
 	<br>
 	<%
 	}
 	%>
+	
+	<form action="EmployeeEdit.jsp" method="POST">
+	<input type="submit" value = "従業員情報編集画面へ">
+	</form>
+	
+	<form action="EmployeeDelete.jsp" method="POST">
+	<input type="submit" value = "従業員情報削除確認画面へ">
+	</form>
+	
 
 </body>
 </html>

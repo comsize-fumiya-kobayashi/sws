@@ -60,9 +60,8 @@ public class EmployeeListServlet extends HttpServlet {
 			/*リクエストスコープをセットします。*/
 			request.setAttribute("employeeList", employeeList);
 			
-		} catch (ClassNotFoundException | SQLException |NullPointerException e) {
+		} catch (ClassNotFoundException | SQLException  e) {
 			e.printStackTrace();
-			
 		}
 		/* 最後にリクエストのjspへの転送を行います。*/
 		/* これにより、従業員情報一覧画面はEmployeelistServletのフォワードになります。*/
