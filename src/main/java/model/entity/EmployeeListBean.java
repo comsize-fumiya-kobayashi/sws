@@ -1,6 +1,8 @@
 package model.entity;
 
-public class EmployeeListBean {
+import java.io.Serializable;
+
+public class EmployeeListBean implements Serializable{
 	
 	/*フィールド内に、m_employeeテーブルのプロパティを10個作成します。*/
 	/* プロパティは、データベースのテーブルに忠実に書きます。*/
@@ -30,12 +32,15 @@ public class EmployeeListBean {
 	/* m_employeeから部署コード*/
 	private String sectionCode;
 	
-	
 	/* m_employeeから入社日*/
 	private int hireDate;
 	
 	/* m_employeeから更新日時*/
 	private int updateDatetime;
+	
+	public EmployeeListBean() {
+		
+	}
 
 	public String getEmployeeCode() {
 		return employeeCode;

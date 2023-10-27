@@ -5,6 +5,7 @@ import java.io.Serializable;
 public class UserBean implements Serializable{
 	private String user_id;
 	private String password;
+	private int login_user_flg;
 	
 	public UserBean() {
 		
@@ -24,6 +25,14 @@ public class UserBean implements Serializable{
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public int getLogin_user_flg() {
+		return login_user_flg;
+	}
+
+	public void setLogin_user_flg(int login_user_flg) {
+		this.login_user_flg = login_user_flg;
 	}
 	
 }

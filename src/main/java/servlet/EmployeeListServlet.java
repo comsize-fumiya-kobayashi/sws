@@ -17,7 +17,7 @@ import model.entity.EmployeeListBean;
 /**
  * Servlet implementation class EmployeeListServlet
  */
-@WebServlet("/employee-list-servlet")
+@WebServlet("/EmployeeListServlet")
 public class EmployeeListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -47,20 +47,21 @@ public class EmployeeListServlet extends HttpServlet {
 			throws ServletException, IOException {
 		
 		/* エンコーディングでUTF-8を指定して、文字化けを防ぎます。*/
-		request.setCharacterEncoding("UTF-8");
+//		request.setCharacterEncoding("UTF-8");
 
 		/* インスタンス化して、EmployeeListDAOを生成します。*/
-		EmployeeListDAO dao = new EmployeeListDAO ();
+//		EmployeeListDAO dao = new EmployeeListDAO ();
 		
 		/* EmployeeListDAOでthrowされた例外を、EmployeeListServletでcatchします。*/
 		try {
+			EmployeeListDAO dao = new EmployeeListDAO ();
 			/* EmployeeListDAOを使用します。*/
-			List <EmployeeListBean> employeeList = dao.selectEmployee();
+			List<EmployeeListBean> employeeList = dao.selectEmployee();
 			
 			/*リクエストスコープをセットします。*/
 			request.setAttribute("employeeList", employeeList);
 			
-		} catch (ClassNotFoundException | SQLException |NullPointerException e) {
+		} catch (ClassNotFoundException | SQLException  e) {
 			e.printStackTrace();
 			
 		}

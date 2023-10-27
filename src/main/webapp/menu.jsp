@@ -12,6 +12,9 @@
 	<hr>
 	
 	<div>
+		<form action="EmployeeListServlet" method="POST">
+			<input type="submit" value="商品一覧">
+		</form>
 		<form action="logout.jsp" method="POST">
 			<input type="submit" value="ログアウト">
 		</form>
