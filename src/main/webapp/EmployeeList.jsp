@@ -9,7 +9,7 @@
 </head>
 <body>
 
-	
+
 	<%
 	List<EmployeeListBean> employeeList = (List<EmployeeListBean>) request.getAttribute("employeeList");
 	
@@ -18,7 +18,17 @@
 	%>
 	<h3>従業員情報一覧</h3>
 
-	<table>
+	<table border=1>
+		<tr>
+			<th>従業員コード</th>
+			<th>氏名</th>
+			<th>氏名かな</th>
+			<th>性別</th>
+			<th>生年月日</th>
+			<th>所属部署名</th>
+			<th>入社日</th>
+
+		</tr>
 
 		<%
 		for (EmployeeListBean employee : employeeList) {
@@ -26,15 +36,13 @@
 		<tr>
 
 			<td><%=employee.getEmployeeCode()%></td>
-			<td><%=employee.getLastName()%></td>
-			<td><%=employee.getFirstName()%></td>
-			<td><%=employee.getLastKanaName()%></td>
-			<td><%=employee.getFirstKanaName()%></td>
+			<td><%=employee.getLastName()%> <%=employee.getFirstName() %></td>
+			<td><%=employee.getLastKanaName()%> <%=employee.getFirstKanaName()%></td>
 			<td><%=employee.getGender()%></td>
 			<td><%=employee.getBirthDay()%></td>
 			<td><%=employee.getSectionCode()%></td>
 			<td><%=employee.getHireDate()%></td>
-			<td><%=employee.getUpdateDatetime()%></td>
+
 		</tr>
 		<%
 		}
@@ -48,15 +56,15 @@
 	<%
 	}
 	%>
-	
+
 	<form action="EmployeeEdit.jsp" method="POST">
-	<input type="submit" value = "従業員情報編集画面へ">
+		<input type="submit" value="従業員情報編集画面へ">
 	</form>
-	
+
 	<form action="EmployeeDelete.jsp" method="POST">
-	<input type="submit" value = "従業員情報削除確認画面へ">
+		<input type="submit" value="従業員情報削除確認画面へ">
 	</form>
-	
+
 
 </body>
 </html>
