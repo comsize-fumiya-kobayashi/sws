@@ -38,10 +38,10 @@ public class EmployeeListDAO {
 				String lastKanaName = res.getString("last_kana_name");
 				String firstKanaName = res.getString("first_kana_name");
 				String gender = res.getString("gender");
-				int birthDay = res.getInt("birth_day");
+				String birthDay = res.getString("birth_day");
 				String sectionCode = res.getString ("section_code");
-				int hireDate = res.getInt("hire_date");
-				int updateDatetime = res.getInt("update_datetime");
+				String hireDate = res.getString("hire_date");
+				String updateDatetime = res.getString("update_datetime");
 				
 				bean.setEmployeeCode(employeeCode);
 				bean.setLastName(lastName);

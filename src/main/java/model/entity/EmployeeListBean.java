@@ -25,17 +25,17 @@ public class EmployeeListBean {
 	private String gender;
 	
 	/* m_employeeから生年月日*/
-	private int birthDay;
+	private String  birthDay;
 	
 	/* m_employeeから部署コード*/
 	private String sectionCode;
 	
 	
 	/* m_employeeから入社日*/
-	private int hireDate;
+	private String hireDate;
 	
 	/* m_employeeから更新日時*/
-	private int updateDatetime;
+	private String updateDatetime;
 
 	public String getEmployeeCode() {
 		return employeeCode;
@@ -85,11 +85,11 @@ public class EmployeeListBean {
 		this.gender = gender;
 	}
 
-	public int getBirthDay() {
+	public String getBirthDay() {
 		return birthDay;
 	}
 
-	public void setBirthDay(int birthDay) {
+	public void setBirthDay(String birthDay) {
 		this.birthDay = birthDay;
 	}
 
@@ -101,21 +101,24 @@ public class EmployeeListBean {
 		this.sectionCode = sectionCode;
 	}
 
-	public int getHireDate() {
+	public String getHireDate() {
 		return hireDate;
 	}
 
-	public void setHireDate(int hireDate) {
+	public void setHireDate(String hireDate) {
 		this.hireDate = hireDate;
 	}
 
-	public int getUpdateDatetime() {
+	public String getUpdateDatetime() {
 		return updateDatetime;
 	}
 
-	public void setUpdateDatetime(int updateDatetime) {
+	public void setUpdateDatetime(String updateDatetime) {
 		this.updateDatetime = updateDatetime;
 	}
+
+	
+	
 	
 	
 	
