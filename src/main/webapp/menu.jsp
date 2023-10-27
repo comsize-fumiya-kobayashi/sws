@@ -12,6 +12,10 @@
 	<hr>
 	
 	<div>
+		<form action="employee-register.jsp" method="POST">
+			<input type="submit" value="商品登録">
+		</form>
+		<br>
 		<form action="employee-list-servlet" method="POST">
 			<input type="submit" value="商品一覧">
 		</form>
