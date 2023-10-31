@@ -16,7 +16,8 @@
 	if (employeeList.size() != 0) {
 	%>
 	<h3>従業員情報一覧</h3>
-
+	
+	<form method="POST" action="?">
 	<table border=1>
 		<tr>
 			<th>従業員コード</th>
@@ -33,8 +34,8 @@
 		for (EmployeeListBean employee : employeeList) {
 		%>
 		<tr>
-
-			<td><%=employee.getEmployeeCode()%></td>
+			<td>
+			<input type="radio" name="EmployeeCode" value="<%=employee.getEmployeeCode()%>" /><%=employee.getEmployeeCode()%></td>
 			<td><%=employee.getLastName()%> <%=employee.getFirstName()%></td>
 			<td><%=employee.getLastKanaName()%> <%=employee.getFirstKanaName()%></td>
 			<td><%=employee.getGender()%></td>
@@ -46,23 +47,29 @@
 		<%
 		}
 		%>
-
 	</table>
+	<br>
 	<%
 	} else {
 	%>従業員情報がありません。
 	<br>
 	<%
 	}
-	%>
-
-	<form action="employee-register.jsp" method="POST">
-		<input type="submit" value="従業員情報登録画面へ">
+	%> 
+	<br>
+	<input type="submit" value="従業員情報編集画面へ" formaction="employee-alter-form.jsp">
+	<br>
+	<input type="submit" value="従業員情報削除確認画面へ" formaction="EmployeeDelete.jsp">
 	</form>
-
+	<%--
+	<form action="employee-register.jsp" method="POST">
+		<input type="submit" value="従業員情報編集画面へ">
+	</form>
+	<br>
 	<form action="EmployeeDelete.jsp" method="POST">
 		<input type="submit" value="従業員情報削除確認画面へ">
 	</form>
+	--%>
 
 
 </body>
