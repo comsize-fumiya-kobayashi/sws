@@ -12,9 +12,8 @@
 
 	<%
 	List<EmployeeListBean> employeeList = (List<EmployeeListBean>) request.getAttribute("employeeList");
-	
+
 	if (employeeList.size() != 0) {
-	
 	%>
 	<h3>従業員情報一覧</h3>
 
@@ -36,7 +35,7 @@
 		<tr>
 
 			<td><%=employee.getEmployeeCode()%></td>
-			<td><%=employee.getLastName()%> <%=employee.getFirstName() %></td>
+			<td><%=employee.getLastName()%> <%=employee.getFirstName()%></td>
 			<td><%=employee.getLastKanaName()%> <%=employee.getFirstKanaName()%></td>
 			<td><%=employee.getGender()%></td>
 			<td><%=employee.getBirthDay()%></td>
@@ -49,15 +48,15 @@
 		%>
 
 	</table>
-	<% }else{
-	
+	<%
+	} else {
 	%>従業員情報がありません。
 	<br>
 	<%
 	}
 	%>
 
-	<form action="EmployeeEdit.jsp" method="POST">
+	<form action="employee-register.jsp" method="POST">
 		<input type="submit" value="従業員情報編集画面へ">
 	</form>
 
