@@ -57,7 +57,7 @@
 	%>
 
 	<form action="employee-register.jsp" method="POST">
-		<input type="submit" value="従業員情報編集画面へ">
+		<input type="submit" value="従業員情報登録画面へ">
 	</form>
 
 	<form action="EmployeeDelete.jsp" method="POST">
